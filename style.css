@@ -8,28 +8,53 @@
   /* Body Styling */
   body {
     font-family: 'Garamond', serif;
-    background-color: #EAE7DD; /* Matches your navbar background color */
+    background-color: #EAE7DD;
+    position: relative; /* Ensures relative positioning for the grid overlay */
+  }
+  
+  /* Grid Column Overlay */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Extends the grid to cover the entire page */
+    background: repeating-linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.05) 0, /* Updated opacity */
+      rgba(0, 0, 0, 0.05) 85px,
+      transparent 85px,
+      transparent 100px
+    );
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 0; /* Places the grid behind all content */
   }
   
   /* Navbar Styles */
   .navbar {
-    background-color: #EAE7DD; /* Background color of navbar */
-    padding: 20px 0; /* Space above and below navbar content */
+    background-color: #EAE7DD;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
   }
   
   .container {
     display: grid;
-    grid-template-columns: repeat(12, 85px); /* 12 equal columns of 85px */
-    column-gap: 15px; /* Gutter of 15px between columns */
-    max-width: calc((85px * 12) + (15px * 11)); /* Full grid width with gutters */
-    margin: 0 auto; /* Center the grid horizontally */
-    align-items: center; /* Vertically align items in the grid */
+    grid-template-columns: repeat(12, 85px); /* 12 columns, each 85px */
+    column-gap: 15px;
+    max-width: calc((85px * 12) + (15px * 11));
+    margin: 0 auto;
+    align-items: center;
+    position: relative;
+    z-index: 1; /* Ensure content is above the grid */
   }
   
   /* GroupGuru Logo Styling */
   .logo {
-    grid-column: 1 / span 3; /* First 3 columns */
+    grid-column: 1 / span 3;
     text-align: center;
+    z-index: 1;
   }
   
   .logo h1 {
@@ -41,6 +66,7 @@
   }
   
   .logo p {
+    font-family: 'Quicksand', sans-serif;
     color: #99775C;
     font-size: 30px;
     margin: 0;
@@ -50,13 +76,15 @@
   
   /* Navigation Links Styling */
   .nav-links {
-    grid-column: 10 / span 3; /* Last 3 columns */
+    grid-column: 10 / span 3;
     display: flex;
-    justify-content: space-between; /* Space buttons evenly */
+    justify-content: space-between;
     align-items: center;
+    z-index: 1;
   }
   
   .nav-links a {
+    font-family: 'REM', sans-serif;
     color: #99775C;
     font-size: 25px;
     text-decoration: none;
@@ -64,6 +92,30 @@
   }
   
   .nav-links a:hover {
-    color: #8A6853; /* Hover color */
+    color: #8A6853;
   }
   
+  /* Footer Styling */
+  footer {
+    background-color: #EAE7DD;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  footer p {
+    color: #99775C;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+  }
+  @font-face {
+    font-family: 'Quicksand';
+    src: url('./assets/fonts/Quicksand-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'REM';
+    src: url('./assets/fonts/REM-Regular.ttf') format('truetype');
+  }
+    
