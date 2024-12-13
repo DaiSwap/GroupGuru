@@ -20,13 +20,25 @@
     background-color: #EAE7DD;
   }
   
+  /* Logo Container */
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 268.433px;
+    height: 83px;
+    flex-shrink: 0;
+  }
+  
   .logo h1 {
     color: #99775C;
     font-family: Garamond, serif;
     font-size: 50px;
     font-weight: 400;
     letter-spacing: -5px;
-    margin-bottom: 5px;
+    margin: 0;
+    line-height: normal; /* Keeps "GroupGuru" tightly aligned */
   }
   
   .logo p {
@@ -35,8 +47,11 @@
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 2px;
+    margin: 0;
+    line-height: normal;
   }
   
+  /* Navigation Links */
   .nav-links {
     list-style: none;
     display: flex;
