@@ -5,74 +5,65 @@
     box-sizing: border-box;
   }
   
-  /* Body Style */
+  /* Body Styling */
   body {
-    font-family: Arial, sans-serif;
-    background-color: #EAE7DD;
+    font-family: 'Garamond', serif;
+    background-color: #EAE7DD; /* Matches your navbar background color */
   }
   
   /* Navbar Styles */
   .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #EAE7DD;
+    background-color: #EAE7DD; /* Background color of navbar */
+    padding: 20px 0; /* Space above and below navbar content */
   }
   
-  /* Logo Container */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(12, 85px); /* 12 equal columns of 85px */
+    column-gap: 15px; /* Gutter of 15px between columns */
+    max-width: calc((85px * 12) + (15px * 11)); /* Full grid width with gutters */
+    margin: 0 auto; /* Center the grid horizontally */
+    align-items: center; /* Vertically align items in the grid */
+  }
+  
+  /* GroupGuru Logo Styling */
   .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 268.433px;
-    height: 83px;
-    flex-shrink: 0;
+    grid-column: 1 / span 3; /* First 3 columns */
+    text-align: center;
   }
   
   .logo h1 {
     color: #99775C;
-    font-family: Garamond, serif;
-    font-size: 50px;
-    font-weight: 400;
-    letter-spacing: -5px;
+    font-size: 60px;
+    font-weight: normal;
     margin: 0;
-    line-height: normal; /* Keeps "GroupGuru" tightly aligned */
+    letter-spacing: -2px;
   }
   
   .logo p {
     color: #99775C;
-    font-family: Quicksand, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 2px;
+    font-size: 30px;
     margin: 0;
-    line-height: normal;
+    letter-spacing: 1px;
+    font-weight: lighter;
   }
   
-  /* Navigation Links */
+  /* Navigation Links Styling */
   .nav-links {
-    list-style: none;
+    grid-column: 10 / span 3; /* Last 3 columns */
     display: flex;
-    gap: 20px;
-  }
-  
-  .nav-links li {
-    display: inline;
+    justify-content: space-between; /* Space buttons evenly */
+    align-items: center;
   }
   
   .nav-links a {
     color: #99775C;
-    font-family: REM, sans-serif;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 25px;
     text-decoration: none;
-    letter-spacing: -1.2px;
-    transition: color 0.3s ease;
+    font-weight: normal;
   }
   
   .nav-links a:hover {
-    color: #8A6853; /* Slightly darker shade for hover effect */
+    color: #8A6853; /* Hover color */
   }
   
